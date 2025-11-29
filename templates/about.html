@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/ensureServer.js" defer></script>
+    <script src="/static/scripts.js" defer></script>
+</head>
+<body>
+    <nav id="HeaderBar" role="navigation">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/track">Track Spend</a></li>
+            <li><a href="/networth">NetWorth</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="card">
+            <h1>About This App</h1>
+            <p>This is a simple finance tracker demo. Use <strong>Track Spend</strong> to add transactions (expenses/income). Visit <strong>NetWorth</strong> to add assets and visualize how your assets contribute to your net worth.</p>
+            <p>Note: The app currently uses dummy data and in-memory storage. Values shown on the Home dashboard are placeholders until real data is entered and persisted.</p>
+            <p>To make this production-ready, add persistent storage (SQLite/Postgres), authentication, and input validation.</p>
+        </div>
+    </main>
+</body>
+</html>

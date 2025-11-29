@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/ensureServer.js" defer></script>
+    <script src="/static/scripts.js" defer></script>
+</head>
+<body>
+    <nav id="HeaderBar" role="navigation">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/track">Track Spend</a></li>
+            <li><a href="/networth">NetWorth</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <header class="card">
+            <h1>Finance Dashboard</h1>
+            <p class="mb-16">Overview of your accounts and recent activity. Values below are fetched from the local Node API.</p>
+        </header>
+
+        <section class="metrics-grid">
+            <div class="card">
+                <div class="metric-title">Total Balance</div>
+                <div class="metric-value" id="totalBalance">R0.00</div>
+            </div>
+
+            <div class="card">
+                <div class="metric-title">Monthly Income</div>
+                <div class="metric-value" id="monthlyIncome">R0.00</div>
+            </div>
+
+            <div class="card">
+                <div class="metric-title">Monthly Expenses</div>
+                <div class="metric-value" id="monthlyExpenses">R0.00</div>
+            </div>
+
+            <div class="card">
+                <div class="metric-title">Savings Rate</div>
+                <div class="metric-value" id="savingsRate">—</div>
+            </div>
+        </section>
+
+        <section class="metrics-grid mt-16">
+            <div class="card" style="grid-column:span 2">
+                <div class="metric-title">Net Worth (30d)</div>
+                <div id="chart" style="height:200px;background:linear-gradient(180deg,#eef2ff,#ffffff);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#475569">Chart placeholder</div>
+            </div>
+
+            <div class="card">
+                <div class="metric-title">Recent Transactions</div>
+                <ul id="recentList" style="margin-top:10px;list-style:none"></ul>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

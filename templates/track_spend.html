@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Track Spend</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/ensureServer.js" defer></script>
+    <script src="/static/scripts.js" defer></script>
+</head>
+<body>
+    <nav id="HeaderBar" role="navigation">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/track">Track Spend</a></li>
+            <li><a href="/networth">NetWorth</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <header class="card">
+            <h1>Track Spend</h1>
+            <p class="mb-16">Add new transactions below. This form posts back to the server and stores the transaction in memory (for demo).</p>
+        </header>
+
+        <section class="card mt-16">
+            <form id="txForm">
+                <div class="form-row">
+                    <label class="field-group">
+                        Date
+                        <input type="date" name="date" id="txDate">
+                    </label>
+                    <label class="field-group">
+                        Description
+                        <input type="text" name="description" id="txDescription" placeholder="e.g., Grocery">
+                    </label>
+                    <label class="field-group">
+                        Amount
+                        <input type="number" step="0.01" name="amount" id="txAmount" placeholder="0.00">
+                    </label>
+                    <label class="field-group">
+                        Type
+                        <select name="type" id="txType">
+                            <option value="expense">Expense</option>
+                            <option value="income">Income</option>
+                        </select>
+                    </label>
+                    <label class="field-group">
+                        Category
+                        <input type="text" name="category" id="txCategory" placeholder="e.g., Food">
+                    </label>
+                </div>
+                <div style="margin-top:12px;text-align:right">
+                    <button type="button" id="txSubmit">Add Transaction</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="mt-16">
+            <h2>Recent Transactions</h2>
+            <div class="card mt-8">
+                <ul id="recentList" style="list-style:none;padding:0;margin:0">
+                    <li>R0.00 — No transactions yet.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

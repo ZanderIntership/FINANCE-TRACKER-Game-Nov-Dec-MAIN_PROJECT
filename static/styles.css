@@ -1,0 +1,117 @@
+/* Public stylesheet served from /static/styles.css
+   (same styles as templates/style.css to ensure the linked file loads)
+*/
+#HeaderBar{
+  position:fixed;
+  top:0;left:0;right:0;
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 20px;
+  background:linear-gradient(90deg,#4c1d95 0%, #7c3aed 50%, #4c1d95 100%);
+  color:#ffffff;
+  box-shadow:0 2px 8px rgba(2,6,23,0.2);
+  z-index:1000;
+}
+
+/* semantic nav */
+#HeaderBar ul{display:flex;gap:10px;list-style:none;margin:0;padding:0}
+#HeaderBar ul li a{display:inline-block;padding:10px 14px;border-radius:8px;color:rgba(255,255,255,0.95);text-decoration:none;transition:background-color 150ms ease,transform 120ms ease}
+#HeaderBar ul li a:hover{background:rgba(255,255,255,0.06);transform:translateY(-1px)}
+#HeaderBar ul li a:active{transform:translateY(0)}
+#HeaderBar ul li a.active{background:rgba(255,255,255,0.10)}
+
+/* Main content wrapper for page content */
+main, .container{max-width:1100px;margin:28px auto;padding:20px}
+
+/* Page background */
+body{font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.5;color:#111;background:linear-gradient(180deg,#f8f3ff 0%, #ffffff 60%);padding-top:72px}
+
+/* Simple card style for content */
+.card{background:linear-gradient(180deg,#ffffff,#fbf8ff);border-radius:12px;padding:20px;box-shadow:0 6px 18px rgba(15,23,42,0.06);border:1px solid rgba(124,58,237,0.06)}
+
+/* Typography helpers */
+h1,h2,h3{color:#0f172a;margin-bottom:10px}
+p{color:#334155;margin-bottom:12px}
+
+/* Responsive adjustments */
+@media (max-width:700px){
+  body{padding-top:120px}
+  #HeaderBar{height:auto;flex-direction:column;align-items:stretch;padding:10px;justify-content:center}
+  #HeaderBar ul{display:block;margin:6px auto;padding:10px;text-align:center}
+  .container{padding:12px}
+}
+
+/* Small screens - compact header */
+@media (max-width:420px){
+  #HeaderBar{padding:8px}
+  #HeaderBar ul{padding:9px;font-size:0.95rem}
+}
+
+/* Utility spacing */
+.mt-16{margin-top:16px}
+.mb-16{margin-bottom:16px}
+
+/* Metrics grid layout */
+.metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
+.metric-title{font-size:0.85rem;color:#6b7280;margin-bottom:8px}
+.metric-value{font-size:1.45rem;font-weight:800;color:#5b21b6}
+
+@media (max-width:1000px){
+  .metrics-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:700px){
+  .metrics-grid{grid-template-columns:1fr}
+}
+
+/* Form controls */
+input[type="text"],input[type="number"],input[type="date"],select,textarea{font-size:0.95rem;padding:10px 12px;border-radius:8px;border:1px solid #e6e7f6;background:#fff;transition:box-shadow 200ms ease,transform 160ms ease,border-color 160ms ease}
+button{font-size:0.95rem}
+
+/* Form layout helpers */
+.form-row{display:flex;gap:12px;flex-wrap:wrap}
+.form-row > label{flex:1;min-width:140px}
+.field-group{display:flex;flex-direction:column}
+
+/* Input focus / glow */
+input[type="text"]:focus,input[type="number"]:focus,input[type="date"]:focus,select:focus,textarea:focus{
+  outline:none;border-color:#8b5cf6;box-shadow:0 6px 18px rgba(124,58,237,0.12), 0 0 0 4px rgba(124,58,237,0.06);transform:translateY(-1px)
+}
+
+/* subtle input hover */
+input[type="text"]:hover,input[type="number"]:hover,input[type="date"]:hover,select:hover,textarea:hover{box-shadow:0 4px 12px rgba(15,23,42,0.04)}
+
+/* Disabled / placeholder style */
+input[disabled],select[disabled],textarea[disabled]{opacity:0.7}
+
+/* Card hover animation */
+.card{transition:transform 220ms cubic-bezier(.2,.9,.3,1),box-shadow 220ms ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(15,23,42,0.10)}
+
+/* small input-entry animation when forms appear */
+@keyframes appearUp { from { opacity:0; transform: translateY(8px) } to { opacity:1; transform: translateY(0) } }
+.card .field-group, .card input, .card select, .card button { animation: appearUp 280ms ease both }
+
+/* Accent styles */
+.card h1, .card h2{color:#4c1d95}
+button{background:#7c3aed;color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
+button:hover{background:#6d28d9}
+
+/* per-asset action buttons */
+.add-amount{background:transparent;color:#7c3aed;border:1px solid rgba(124,58,237,0.12);padding:6px 8px;border-radius:6px}
+.add-amount:hover{background:rgba(124,58,237,0.06)}
+.reduce-amount{background:transparent;color:#dc2626;border:1px solid rgba(220,38,38,0.12);padding:6px 8px;border-radius:6px}
+.reduce-amount:hover{background:rgba(220,38,38,0.06)}
+
+/* Undo button */
+.undo-btn{background:transparent;color:#b45309;border:1px solid rgba(180,83,9,0.10);padding:6px 8px;border-radius:6px;margin-left:6px}
+.undo-btn:hover{background:rgba(180,83,9,0.06)}
+
+/* About page special styles */
+.card.about {display:flex;gap:20px;align-items:flex-start}
+.card.about p{color:#4b5563}
+.about-illustration{width:160px;height:120px;background:linear-gradient(135deg,#c4b5fd,#7c3aed);border-radius:10px;box-shadow:0 6px 12px rgba(124,58,237,0.08)}
+
+/* Small helper */
+.small-muted{font-size:0.9rem;color:#6b7280}
