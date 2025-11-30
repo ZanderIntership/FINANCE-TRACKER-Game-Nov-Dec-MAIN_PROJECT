@@ -1,26 +1,19 @@
-# Application Finance (Node version)
+Application Finance (Node Version)
 
-This project was migrated from Flask to a simple Node/Express backend.
+This project was migrated from a Flask backend to a lightweight Node.js/Express server.
 
-Quick start (PowerShell):
-
-```powershell
-# install dependencies
+Quick Start (PowerShell)
+# Install dependencies
 npm install
 
-# start server
+# Start the server
 npm start
-```
 
-Open http://localhost:3000/ in your browser.
 
-API endpoints:
-- GET /api/transactions — recent transactions (reverse chronological)
-- POST /api/transactions — add transaction (JSON body: date, description, amount, category, type)
-- GET /api/assets — list assets
-- POST /api/assets — add asset (JSON: name, price, account)
-- GET /api/metrics — computed totals from transactions
+Then open http://localhost:3000/
+ in your browser.
 
-Notes:
-- Data is stored in-memory for demo. Replace storage with a database (SQLite/Postgres) for persistence.
-- The frontend is static HTML in `templates/` and uses `static/scripts.js` to call the API.
+About This Project
+
+This is the first official project I completed independently during my internship.
+I built it mainly to revise and reinforce what I learned in the Harvard CS50 course.
